@@ -53,6 +53,8 @@ const Contact = () => {
   };
 
   return (
+    <div className='content'>
+      <h1>Contact</h1>
     <div className='ContactForm' style={{display: 'flex', justifyContent: 'center', 
     alignItems: 'center', height: '20vh'}}>        
       <div className='container'>
@@ -139,6 +141,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

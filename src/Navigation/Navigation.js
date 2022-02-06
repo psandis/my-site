@@ -1,9 +1,42 @@
+import React from "react";
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
-import {FaBars} from "react-icons/fa";
+import {FaGithub, FaBars, FaGitSquare} from "react-icons/fa";
+
+import Home from '../Pages/Home.js'; 
+import Projects from '../Pages/Projects.js'; 
+
+//import logo from '../Images/my-site.png';
+
+const Navigation = (props) => {
+  return (
+    <>
+      <Nav>
+      {/* Set up the Links */}
+      <NavMenu>
+      <NavLink to="/" className="item">
+      {/*
+      <img src={logo} style={{height: '50px', width: '50px'}} alt="Logo" /> 
+      */}
+      <Circle></Circle>      
+      </NavLink>
+      <NavLink to="/projects" className="item">
+        Projects
+      </NavLink>      
+      <NavLink to="/contact" className="item">
+        Contact        
+      </NavLink>
+      </NavMenu>
+        
+      </Nav>   
+     </> 
+    )
+}
+
+export default Navigation;
 
 export const Nav = styled.nav`
-  background: #0C0C22;
+  background: #0a459a;  
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -12,7 +45,7 @@ export const Nav = styled.nav`
 `
 
 export const NavLink = styled(Link)`
-  color: #fff;
+  color: #ffffff;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -24,9 +57,10 @@ export const NavLink = styled(Link)`
   }  
 `
 
-export const Bars = styled(FaBars)`
+export const Bars = styled(FaGithub)`
   display: none;
-  color: #fff;
+  color: #0a459a;
+  
   @media screen and (max-width: 768px){
     display: block;
     position: absolute;
@@ -42,6 +76,7 @@ export const NavMenu = styled.div`
   display: flex;
   align-items: center;
   margin-right: -24px;
+  background: #0a459a; 
   @media screen and (max-width: 768px){
     display:none;
   }
@@ -58,19 +93,38 @@ export const NavBtn = styled.nav`
 `
 
 export const NavBtnLink = styled(Link)`
-  border-radius: 4px;
-  background: #0a459a;
+  border-radius: 4px;  
   padding: 10px 22px;
-  color: #fff;
+  color: #ccc;
   border: none;
   outline: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-
   &:hover{
   transition: all 0.2s ease-in-out;
-  background: #fff;
-  color: #0a459b;  
+  
   }
+`
+
+export const Circle = styled(FaGithub)`
+z-index: 6;
+margin-top: 0.2vmin;
+margin-left: 0.2vmin;
+height:5vmin;
+width:5vmin;
+border-radius:50%;
+background: #0a459a; 
+`
+
+
+export const Circle2 = styled(FaBars)`
+background: #0a459a; 
+z-index: 7;
+margin-left:18vmin;
+margin-top: 3vmin;
+height:5vmin;
+width:5vmin;
+border-radius:100%;
+border:solid 4.5vmin rgb(255,255,55,.7);
 `
